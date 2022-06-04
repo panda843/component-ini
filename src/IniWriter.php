@@ -143,8 +143,6 @@ class IniWriter
      */
     private function encodeKey($key)
     {
-        $key = preg_replace('/[^A-Za-z0-9\-_]/', '', $key);
-
         return $key;
     }
 
@@ -154,8 +152,6 @@ class IniWriter
      */
     private function encodeSectionName($key)
     {
-        $key = preg_replace('/[^A-Za-z0-9_ \-]/', '', $key);
-
         return $key;
     }
 }
