@@ -81,7 +81,8 @@ class IniWriter
             }
 
             if (! is_array($section)) {
-                $ini .= $sectionNames . ' = ' . $this->encodeValue($sectionName) . "\n";
+                $ini .= $sectionName . ' = ' . $this->encodeValue($section) . "\n";
+                continue;
             }else{
                 $sectionName = $this->encodeSectionName($sectionName);
                 $ini .= "[$sectionName]\n";
