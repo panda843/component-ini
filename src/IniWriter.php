@@ -81,12 +81,12 @@ class IniWriter
             }
 
             if (! is_array($section)) {
-                throw new IniWritingException(sprintf("Section \"%s\" doesn't contain an array of values", $sectionName));
+                $ini .= $sectionNames . ' = ' . $this->encodeValue($sectionName) . "\n";
+            }else{
+                $sectionName = $this->encodeSectionName($sectionName);
+                $ini .= "[$sectionName]\n";
             }
-
-            $sectionName = $this->encodeSectionName($sectionName);
-            $ini .= "[$sectionName]\n";
-
+            
             foreach ($section as $option => $value) {
                 if (is_numeric($option)) {
                     $option = $sectionName;
