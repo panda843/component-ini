@@ -120,9 +120,9 @@ class IniWriter
     {
         if (is_bool($value)) {
             if($value){
-                return "true"
+                return "true";
             }else{
-                return "false"
+                return "false";
             }
         }
 
