@@ -232,9 +232,11 @@ class IniReader
         $globals = array();
         $i = 0;
         foreach ($ini as $line) {
+            if(stripos($line,'#') != false){
+                $line = substr($line,0,strpos($line,'#'));
+            }
             $line = trim($line);
             $line = str_replace("\t", " ", $line);
-
             // Comments
             if (!preg_match('/^[a-zA-Z0-9[]/', $line)) {
                 continue;
