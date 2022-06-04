@@ -9,7 +9,7 @@ Read and write INI configurations.
 ## Installation
 
 ```json
-composer require matomo/ini
+composer require panda843/ini
 ```
 
 ## Why?
